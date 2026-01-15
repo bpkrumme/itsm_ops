@@ -1,0 +1,13 @@
+---
+- name: Update a catalog item in Servicenow
+  hosts: localhost
+  gather_facts: false
+  tasks:
+    - name: Update catalog item work notes and state
+      servicenow.itsm.catalog_request:
+        number: "{{ ticket_number }}"
+        request_state: "{{ request_state | default(omit) }}"
+        work_notes: "{{ work_notes }}"
+        state: present
+      when:
+        - ticket_number | length > 0
