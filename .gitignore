@@ -1,3 +1,6 @@
+ansible.cfg
+/artifacts
+ansible-navigator.log
+.password
 .vscode
 .ansible
-
